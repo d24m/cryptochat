@@ -13,7 +13,7 @@ Cryptochat based on [cryptocat] (https://crypto.cat) lets you instantly set up s
 * Uses the Fortuna secure pseudo-randomness generator.
 * Send encrypted .zip files and images.
 * Includes a mobile website compatible with iPhone, Android and BlackBerry.
-* [Cryptochat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
+* [Cryptocat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
 * Chats are securely deleted after one hour of inactivity.
 * Easily invite your Facebook contacts to join your Cryptochat session.
 * Send private messages that can only be seen by a single recipient.
