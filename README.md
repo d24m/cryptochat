@@ -1,9 +1,9 @@
-## Cryptocat
-### Web chat client with client-side cryptography.
-### http://crypto.cat
-#### Beta software - code review highly appreciated.
+## Cryptochat
+### Webbasierter Chat mit clientseitiger Verschlüsselung.
+### http://cryptochat.de
+#### Achtung BETA Software
 
-Cryptocat lets you instantly set up secure conversations. It's an open source encrypted, private alternative to other services such as Facebook chat.
+Cryptochat based on [cryptocat] (https://crypto.cat) lets you instantly set up secure conversations. It's an open source encrypted, private alternative to other services such as Facebook chat.
 
 ## Cool features
 * A client-side 4096-bit Diffie-Hellman-Merkle public key agreement engine.
@@ -13,20 +13,20 @@ Cryptocat lets you instantly set up secure conversations. It's an open source en
 * Uses the Fortuna secure pseudo-randomness generator.
 * Send encrypted .zip files and images.
 * Includes a mobile website compatible with iPhone, Android and BlackBerry.
-* [Cryptocat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
+* [Cryptochat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
 * Chats are securely deleted after one hour of inactivity.
-* Easily invite your Facebook contacts to join your Cryptocat session.
+* Easily invite your Facebook contacts to join your Cryptochat session.
 * Send private messages that can only be seen by a single recipient.
 * A sleek design with time-stamping, optional audio notifications, fluid-window mode, and mobile support.
 * Translations available for French, Catalan, Basque, Italian, German, Portuguese, Russian and Swedish.
 
 ## Protocol Specification
-A [design specification for the Cryptocat protocol](https://crypto.cat/about/) is available.
+A [design specification for the Cryptochat protocol](https://crypto.cat/about/) is available.
 
 ## License
-### Cryptocat is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/):
+### Cryptochat is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/):
 * Noncommercial — You may not use this work for commercial purposes.
-* Attribution — You must attribute the work to the Cryptocat project (but not in any way that suggests that they endorse you or your use of the work).
+* Attribution — You must attribute the work to the Cryptochat project (but not in any way that suggests that they endorse you or your use of the work).
 * Share Alike — If you alter, transform, or build upon this work, you may distribute the resulting work only under the same or similar license to this one.
 
 Additionally:
@@ -43,15 +43,15 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 2. Configure settings inside `index.php`.
 
 ## Important notes
-* Cryptocat provides strongly encrypted, secure communications. However, it is not a replacement to GPG. Think responsibly if you are in extreme, life-threatening situations.
+* Cryptochat provides strongly encrypted, secure communications. However, it is not a replacement to GPG. Think responsibly if you are in extreme, life-threatening situations.
 
-* Using Cryptocat without HTTPS in a production environment is a recipe for disaster. We severely warn against deploying Cryptocat without HTTPS, unless the deployment is occurring as a Tor Hidden Service.
+* Using Cryptochat without HTTPS in a production environment is a recipe for disaster. We severely warn against deploying Cryptochat without HTTPS, unless the deployment is occurring as a Tor Hidden Service.
 
-* Paranoid users may want to use [Cryptocat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
+* Paranoid users may want to use [Cryptochat Chrome](https://chrome.google.com/webstore/detail/gonbigodpnfghidmnphnadhepmbabhij), a Chrome app that loads all code locally, and is secure from being served compromised code.
 
-* The code for secure deletion of idle chats after one hour is not included in the Cryptocat git repository. On the [production server](https://crypto.cat), it's actually a cron job that checks the modification time of chats and [wipe](http://linux.die.net/man/1/wipe)s them securely. Those wanting to set up similar functionality should consider writing something similar.
+* The code for secure deletion of idle chats after one hour is not included in the Cryptochat git repository. On the [production server](https://crypto.cat), it's actually a cron job that checks the modification time of chats and [wipe](http://linux.die.net/man/1/wipe)s them securely. Those wanting to set up similar functionality should consider writing something similar.
 
-* If Cryptocat does not work on your server, please make sure PHP is compiled with [shmop](http://php.net/manual/en/book.shmop.php) support (--enable-shmop).
+* If Cryptochat does not work on your server, please make sure PHP is compiled with [shmop](http://php.net/manual/en/book.shmop.php) support (--enable-shmop).
 
 ## About
 Cryptocat™ is a trademark of and is developed by [Nadim Kobeissi](http://nadim.cc). It uses parts of the [crypto-js](http://code.google.com/p/crypto-js/) library and the [Bitcons](http://somerandomdude.com/work/bitcons/) iconset. Cryptocat is indebted to Paul Brodeur, David Mirza, Hasan Saleh, Morgan Sutherland, and Tina Salameh.
