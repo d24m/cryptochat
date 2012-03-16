@@ -1,9 +1,9 @@
 ## Cryptochat
 ### Webbasierter Chat mit clientseitiger Verschlüsselung.
 ### http://cryptochat.de
-#### Achtung BETA Software
+#### Achtung in Entwicklung befindliche BETA Software
 
-Cryptochat based on [cryptocat] (https://crypto.cat) lets you instantly set up secure conversations. It's an open source encrypted, private alternative to other services such as Facebook chat.
+Cryptochat basiert auf [cryptocat] (https://crypto.cat) und ermöglicht dir spontanes verschlüsseltes chatten ohne Einrichtung oder Installation. Es ist Open Source Software, und eine sichere Alternative zu Chatdiensten wie Google-Talk oder Facebook-Chat.
 
 ## Cool features
 * A client-side 4096-bit Diffie-Hellman-Merkle public key agreement engine.
