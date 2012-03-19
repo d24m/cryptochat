@@ -282,7 +282,7 @@ else {
 			print('<div id="main">
 				<img src="img/cryptochat.png" alt="cryptochat" class="cryptocat" />
 				<form action="'.$install.'" method="get" class="create" id="welcome">
-					<div id="front" class="invisible">
+					<!-- <div id="front" class="invisible">
 						<div id="note">
 							<span id="notetext">
 								Cryptocat provides strong encryption, but does not replace a strong security culture alone. 
@@ -290,7 +290,7 @@ else {
 							</span>
 							<input id="understand" type="button" value="I understand" />
 						</div>
-					</div>
+					</div> -->
 					<div>
 						<input type="text" class="name" name="c" id="c" value="'.$name.'" maxlength="32" autocomplete="off" />
 						<div class="create">
