@@ -294,7 +294,7 @@ else {
 					<div>
 						<input type="text" class="name" name="c" id="c" value="'.$name.'" maxlength="32" autocomplete="off" />
 						<div class="create">
-							<input type="submit" class="create" value="enter" id="create" />
+							<input type="submit" class="create" value="los gehts..." id="create" />
 							<input type="button" class="create" value="?" id="random" />
 						</div>
 						<!-- <div style="text-align:center" id="intro">New to Cryptocat? Check out this <a href="#" id="video">cool video!</a></div> -->
@@ -437,17 +437,17 @@ else {
 				}
 			}
 			else {
-				welcome('Nur Zeichen und Zahlen');
+				welcome('Nur Zeichen und Zahlen!');
 			}
 		}
 		else if (isset($_POST['logout']) && preg_match('/^\w+$/', $_POST['logout'])) {
 				session_name('s'.$_POST['logout']);
 				session_start();
 				logout($_POST['logout'], $_SESSION['nick'], 0);
-				welcome('Chatname');
+				welcome('Name deines Chats');
 		}
 		else {
-				welcome('Chatname');
+				welcome('Name deines Chats');
 		}
 	?>
 </body>
