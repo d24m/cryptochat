@@ -11,6 +11,7 @@ function gen(s) {
 
 $("#welcome").submit( function() {
 	$("#c").val($("#c").val().toLowerCase());
+	return true;
 	if (understood) {
 		return true;
 	}
