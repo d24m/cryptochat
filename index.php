@@ -14,8 +14,8 @@
 	/* Vital configuration settings: */
 	
 	/* Install directory and domain name. */
-	$install = 'https://crypto.cat/';
-	$domain = 'crypto.cat';
+	$install = 'https://cryptochat.de/';
+	$domain = 'cryptochat.de';
 	/* HTTPS is highly recommended. */
 	/* Using Cryptocat without HTTPS in a production environment */
 	/* is a recipe for disaster. We severely warn against deploying */
@@ -23,7 +23,7 @@
 	/* a Tor Hidden Service. */
 	$https = TRUE;
 	/* Chat storage directory. Needs to be writable by web server. */
-	$data = '/srv/data/';
+	$data = '/home/d24m/ccdata/';
 	/* Maximum users in a chat. Untested above 10. */
 	$maxusers = 10;
 	/* Maximum characters per line. */
