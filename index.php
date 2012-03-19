@@ -230,8 +230,8 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="description" content="Cryptocat lets you instantly set up secure conversations. It's an open source encrypted, private alternative to other services such as Facebook chat." />
-	<meta name="keywords" content="encrypted chat, private chat, secure chat, cryptocat" />
-	<title>Cryptocat</title>
+	<meta name="keywords" content="verschlüsselter chat, privater chat, sicherer chat, cryptochat" />
+	<title>Cryptochat</title>
 	<?php
 		$mobile = 0;
 		$agent = $_SERVER['HTTP_USER_AGENT'];
@@ -251,9 +251,9 @@
 		if (isset($_GET['redirect']) && preg_match('/((mailto\:|(news|(ht|f)tp(s?))\:\/\/){1}\S+)/i', $_GET['redirect'])) {
 			print('</head>
 			<body><div class="redirect"><img src="img/cryptochat.png" alt="cryptochat" />
-			You are leaving Cryptocat to visit: <p>
+			Du verlässt Cryptochat und wirst weitergeleitet zu: <p>
 			<a href="'.htmlspecialchars($_GET['redirect']).'">'.htmlspecialchars($_GET['redirect']).'</a>
-			</p>Click the link to continue.</div></body></html>');
+			</p>Klick auf den Link um ihm zu folgen.</div></body></html>');
 			exit;
 		}
 		if (isset($_GET['close'])) {
@@ -303,15 +303,15 @@ else {
 				<table>
 					<tr>
 						<td class="img"><img src="img/1.png" alt="" /></td>
-						<td id="td1"><strong>Cryptocat</strong> lets you instantly set up secure conversations. It\'s an open source encrypted, private alternative to other services such as Facebook chat.</td>
+						<td id="td1">Mit Cryptochat kannst du sofort und sicher chatten. Es basiert auf der Open Source Software <a href="https://crypto.cat">Cryptocat</a> und ist eine verschlüsselte und sichere Alternative zu anderen Chatdiensten wie Google Talk oder Facebook.</td>
 					</tr>
 					<tr>
 						<td class="img"><img src="img/2.png" alt="" /></td>
-						<td id="td2">Messages are encrypted inside your own browser using AES-256 and 4096-bit asymmetric keys. Encrypted data is securely wiped after one hour of inactivity.</td>
+						<td id="td2">Alle Nachrichten werden Browserseitig verschlüsselt und alle anfallenden Daten nach einer Stunde Inaktivität sicher gelöscht.</td>
 					</tr>
 					<tr>
 						<td class="img"><img src="img/3.png" alt="" /></td>
-						<td id="td3">Cryptocat also runs as a <a target="_blank" href="https://torproject.org">Tor</a> hidden service (<a href="http://xdtfje3c46d2dnjd.onion">http://xdtfje3c46d2dnjd.onion</a>) and works on your iPhone, Android and BlackBerry.</td>
+						<td id="td3">Cryptochat funktioniert auch auf iPhone, Android and BlackBerry.</td>
 					</tr>
 				</table>
 				<div class="bottom">
@@ -433,21 +433,21 @@ else {
 					chat($_GET['c']);
 				}
 				else {
-					welcome('chat name too large');
+					welcome('Dein Name ist zu lang');
 				}
 			}
 			else {
-				welcome('letters and numbers only');
+				welcome('Bitte nur Zeichen und Zahlen');
 			}
 		}
 		else if (isset($_POST['logout']) && preg_match('/^\w+$/', $_POST['logout'])) {
 				session_name('s'.$_POST['logout']);
 				session_start();
 				logout($_POST['logout'], $_SESSION['nick'], 0);
-				welcome('name your chat');
+				welcome('Gib deinem Chatraum einen Namen');
 		}
 		else {
-				welcome('name your chat');
+				welcome('Gib deinem Chatraum einen Namen');
 		}
 	?>
 </body>
