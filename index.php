@@ -383,7 +383,7 @@ else {
 						</form>
 					</div>
 				</div>
-				<!-- <div id="fadebox" class="invisible"></div> -->
+				<div id="fadebox" class="invisible"></div>
 			</div>
 			<a href="'.$install.'" onclick="logout();"><img src="img/cryptochat.png" class="chat" alt="cryptochat" /></a>
 			<img src="img/maximize.png" alt="maximize" id="maximize" title="expand" />
