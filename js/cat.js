@@ -211,7 +211,7 @@ function process(line, sentid) {
 				}
 			}
 		}
-		else if (match = line.match(/^(\&gt\;|\&lt\;)\s[a-z]{1,12}\s(has arrived|has left)$/)) {
+		else if (match = line.match(/^(\&gt\;|\&lt\;)\s[a-z]{1,12}\s(hat den Chat betreten|hat den Chat verlassen)$/)) {
 			updatekeys(true);
 			line = "<span class=\"nick\">" + match[0] + "</span>";
 			pushline(line, pos);
