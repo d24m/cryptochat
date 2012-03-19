@@ -717,14 +717,14 @@ $("#talk").mouseout(function(){
 });
 
 $("#talk").mouseover(function(){
-	$("#talk").val("send");
+	$("#talk").val("OK");
 });
 
 window.onfocus = function() {
 	clearTimeout(blur);
 	cfocus = true;
 	num = 0;
-	document.title = "[" + num + "] Cryptocat";
+	document.title = "[" + num + "] Cryptochat";
 };
 window.onblur = function() {
 	blur = setTimeout("cfocus = false", update);
