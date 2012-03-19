@@ -433,21 +433,21 @@ else {
 					chat($_GET['c']);
 				}
 				else {
-					welcome('Dein Name ist zu lang');
+					welcome('Dein Chatname ist zu lang');
 				}
 			}
 			else {
-				welcome('Bitte nur Zeichen und Zahlen');
+				welcome('Nur Zeichen und Zahlen');
 			}
 		}
 		else if (isset($_POST['logout']) && preg_match('/^\w+$/', $_POST['logout'])) {
 				session_name('s'.$_POST['logout']);
 				session_start();
 				logout($_POST['logout'], $_SESSION['nick'], 0);
-				welcome('Gib deinem Chatraum einen Namen');
+				welcome('Chatname');
 		}
 		else {
-				welcome('Gib deinem Chatraum einen Namen');
+				welcome('Chatname');
 		}
 	?>
 </body>
