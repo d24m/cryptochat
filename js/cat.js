@@ -423,7 +423,7 @@ $("#nickform").submit( function() {
 		$('#nickentry').fadeOut('fast', function() {
 			$('#keygen').fadeIn('fast', function() {
 				var down, up, e;
-				$('#keytext').html('Tippe möglichst wahllos auf den Tasten deiner Tastatur herum um die Verschüsselung zu initialisieren:' + 
+				$('#keytext').html('Zum Start der Verschlüsselung tippe wahllos Zeichen in das Textfeld:' + 
 				'<br /><input type="password" id="keytropy" />');
 				$("#keytropy").focus();
 				$("#keytropy").keydown(function(event) {
