@@ -315,7 +315,7 @@ else {
 					</tr>
 				</table>
 				<div class="bottom">
-					<span id="lang">
+					<!-- <span id="lang">
 						<a href="#" onclick="translate(\'fr\')">fr</a> 
 						<a href="#" onclick="translate(\'ca\')">ca</a> 
 						<a href="#" onclick="translate(\'eu\')">eu</a> 
@@ -324,7 +324,7 @@ else {
 						<a href="#" onclick="translate(\'pt\')">pt</a> 
 						<a href="#" onclick="translate(\'ru\')">ru</a> 
 						<a href="#" onclick="translate(\'sv\')">sv</a>
-					</span>
+					</span> -->
 					<div class="links">
 						<!-- <a href="https://crypto.cat/about">about</a> --> 
 						<a target="_blank" href="https://twitter.com/cryptochat">twitter</a> 
