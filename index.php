@@ -391,7 +391,7 @@ else {
 			<img src="img/invite.png" alt="invite" id="invite" title="invite friend" />
 			<img src="img/filer.png" alt="file" id="file" title="send encrypted file" />
 			<div id="inchat"><div id="chat"></div></div>
-			<div id="info">chatting as <span id="nick">'.$nick.'</span> on 
+			<div id="info">du chattest als <span id="nick">'.$nick.'</span> auf 
 			<strong class="blue">'.$install.'?c=</strong><strong id="name">'.$name.'</strong>
 			</div>
 			<form name="chatform" id="chatform" method="post" action="'.$install.'">
