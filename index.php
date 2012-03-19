@@ -250,7 +250,7 @@
 		}
 		if (isset($_GET['redirect']) && preg_match('/((mailto\:|(news|(ht|f)tp(s?))\:\/\/){1}\S+)/i', $_GET['redirect'])) {
 			print('</head>
-			<body><div class="redirect"><img src="img/cryptocat.png" alt="" />
+			<body><div class="redirect"><img src="img/cryptochat.png" alt="cryptochat" />
 			You are leaving Cryptocat to visit: <p>
 			<a href="'.htmlspecialchars($_GET['redirect']).'">'.htmlspecialchars($_GET['redirect']).'</a>
 			</p>Click the link to continue.</div></body></html>');
@@ -280,7 +280,7 @@ else {
 		function welcome($name) {
 			global $install;
 			print('<div id="main">
-				<img src="img/cryptocat.png" alt="cryptocat" class="cryptocat" />
+				<img src="img/cryptochat.png" alt="cryptochat" class="cryptocat" />
 				<form action="'.$install.'" method="get" class="create" id="welcome">
 					<div id="front" class="invisible">
 						<div id="note">
@@ -385,7 +385,7 @@ else {
 				</div>
 				<div id="fadebox" class="invisible"></div>
 			</div>
-			<a href="'.$install.'" onclick="logout();"><img src="img/cryptocat.png" class="chat" alt="cryptocat" /></a>
+			<a href="'.$install.'" onclick="logout();"><img src="img/cryptochat.png" class="chat" alt="cryptochat" /></a>
 			<img src="img/maximize.png" alt="maximize" id="maximize" title="expand" />
 			<img src="img/nosound.png" alt="sound" id="sound" title="message sounds off" />
 			<img src="img/invite.png" alt="invite" id="invite" title="invite friend" />
