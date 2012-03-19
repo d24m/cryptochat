@@ -297,7 +297,7 @@ else {
 							<input type="submit" class="create" value="enter" id="create" />
 							<input type="button" class="create" value="?" id="random" />
 						</div>
-						<div style="text-align:center" id="intro">New to Cryptocat? Check out this <a href="#" id="video">cool video!</a></div>
+						<!-- <div style="text-align:center" id="intro">New to Cryptocat? Check out this <a href="#" id="video">cool video!</a></div> -->
 					</div>
 				</form>
 				<table>
@@ -326,10 +326,10 @@ else {
 						<a href="#" onclick="translate(\'sv\')">sv</a>
 					</span>
 					<div class="links">
-						<a href="https://crypto.cat/about">about</a> 
-						<a target="_blank" href="https://twitter.com/cryptocatapp">twitter</a> 
-						<a target="_blank" href="http://blog.crypto.cat">blog</a> 
-						<a target="_blank" href="https://github.com/kaepora/cryptocat/">source</a>
+						<!-- <a href="https://crypto.cat/about">about</a> --> 
+						<a target="_blank" href="https://twitter.com/cryptochat">twitter</a> 
+						<!-- <a target="_blank" href="http://blog.crypto.cat">blog</a> --> 
+						<a target="_blank" href="https://github.com/d24m/cryptochat">source</a>
 					</div>
 				</div>
 			</div>
