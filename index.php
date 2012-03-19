@@ -48,7 +48,7 @@
 	ini_set('session.entropy_length', '1024');
 	session_set_cookie_params(0, '/', $domain, $https, TRUE);
 	error_reporting(0);
-	$inforegex = '/(\>|\<)\s[a-z]{1,12}\shas\s(arrived|left)/';
+	$inforegex = '/(\>|\<)\s[a-z]{1,12}\shat\sden\sChat\s(betreten|verlassen)/';
 	
 	function getpeople($chat) {
 		preg_match_all('/[a-z]{1,12}:/', $chat[0], $people);
@@ -352,7 +352,7 @@ else {
 					$_SESSION['nick'] = $nick;
 					$_SESSION['check'] = "OK";
 					$chat[0] = trim($chat[0]).$nick.':'.$key."|\n";
-					$chat[count($chat)] = "> ".$nick." has arrived\n";
+					$chat[count($chat)] = "> ".$nick." hat den Chat betreten\n";
 					file_put_contents($data.$name, implode('', $chat), LOCK_EX);
 					$_SESSION['pos'] = count(file($data.$name)) - 1;
 				}
@@ -414,7 +414,7 @@ else {
 			if ($_SESSION['check'] == "OK") {
 				preg_match('/'.$nick.'\:[^\|]+\|/', $chat[0], $public);
 				$chat[0] = str_replace($public[0], '', $chat[0]);
-				$chat[count($chat)+1] = "< ".$nick." has left\n";
+				$chat[count($chat)+1] = "< ".$nick." hat den Chat verlassen\n";
 				if (!$ghost) {
 					session_unset();
 					session_destroy();
