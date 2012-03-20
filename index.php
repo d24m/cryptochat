@@ -35,12 +35,12 @@
 	/* Maximum encrypted file size in kilobytes. */
 	$filesize = 512;
 	/* Default nicknames: */
-	$nicks = array('Anakin','Bane','Boba','C-3PO','Chewbacca','Cliegg',
-	'Cody','Dooku','Gilad','Grievous','Han','Jabba','Jacen','Jaden','Jaina',
-	'Jango','Jar','Ki-Adi-Mundi','Kyle','Lando','Leia','Luke','Luminara',
-	'Mace','Malak','Mara','Maul','Obi-Wan','Owen','Padmé','Palpatine',
-	'Plagueis','Plo','Qui-Gon','R2-D2','Revan','Shaak','Shmi','Thrawn',
-	'Watto','Wedge','Yoda');
+	$nicks = array('anakin','bane','boba','c3po','chewbacca','cliegg',
+	'cody','dooku','gilad','grievous','han','jabba','jacen','jaden','jaina',
+	'jango','jar','kiadi','kyle','lando','leia','luke','luminara',
+	'mace','malak','mara','maul','obiwan','owen','padme','palpatine',
+	'plagueis','plo','quigon','r2d2','revan','shaak','shmi','thrawn',
+	'watto','wedge','yoda');
 	/* Polling and timeout rates. You probably shouldn't touch these. */
 	$update = 1150;
 	$timeout = 80;
@@ -378,7 +378,7 @@ else {
 						<span id="keytext"></span>
 					</div>
 					<div id="nickentry" class="invisible">
-						<p>Enter nickname</p>
+						<p>gewünschter Nutzername:</p>
 						<form name="nickform" id="nickform" method="post" action="'.$install.'">
 							<div>
 								<input type="text" name="nickinput" id="nickinput" value="'.$nick.'" maxlength="12" autocomplete="off" />
