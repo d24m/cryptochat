@@ -35,8 +35,12 @@
 	/* Maximum encrypted file size in kilobytes. */
 	$filesize = 512;
 	/* Default nicknames: */
-	$nicks = array('bunny', 'kitty', 'pony', 'puppy', 'squirrel', 'sparrow', 'turtle', 
-	'kiwi', 'fox', 'owl', 'raccoon', 'koala', 'echidna', 'panther', 'sprite', 'ducky');
+	$nicks = array('Anakin','Bane','Boba','C-3PO','Chewbacca','Cliegg',
+	'Cody','Dooku','Gilad','Grievous','Han','Jabba','Jacen','Jaden','Jaina',
+	'Jango','Jar','Ki-Adi-Mundi','Kyle','Lando','Leia','Luke','Luminara',
+	'Mace','Malak','Mara','Maul','Obi-Wan','Owen','Padmé','Palpatine',
+	'Plagueis','Plo','Qui-Gon','R2-D2','Revan','Shaak','Shmi','Thrawn',
+	'Watto','Wedge','Yoda');
 	/* Polling and timeout rates. You probably shouldn't touch these. */
 	$update = 1150;
 	$timeout = 80;
