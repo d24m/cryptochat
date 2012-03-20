@@ -156,10 +156,10 @@ function tagify(line) {
 			line = line.replace(/^[a-z]{1,12}\:\s\@[a-z]{1,12}/, '<span class="nick">' + thisnick + ' <span class="blue">&gt;</span> ' +
 			atmatch.toString().substring(thisnick.length + 3) + '</span>');  
 			if (match = line.match(/data:image\S+$/)) {
-				line = line.replace(/data:image.+/, '<a onclick="display(\'' + match + '\', \'' + getstamp(5) + '\', 1)">view encrypted image</a>');
+				line = line.replace(/data:image.+/, '<a onclick="display(\'' + match + '\', \'' + getstamp(5) + '\', 1)">Zeige verschlüsseltes Bild</a>');
 			}
 			else if (match = line.match(mime)) {
-				line = line.replace(mime, '<a onclick="display(\'' + match[0] + '\', \'' + getstamp(5) + '\', 0)">download encrypted .zip file</a>');
+				line = line.replace(mime, '<a onclick="display(\'' + match[0] + '\', \'' + getstamp(5) + '\', 0)">Verschüsselte Zip-Datei herunterladen</a>');
 			}
 		}
 		else {
@@ -190,7 +190,7 @@ function process(line, sentid) {
 			(jQuery.inArray(hmac, usedhmac) >= 0)) {
 				if (jQuery.inArray(thisnick, inblocked) < 0) {
 					line = tagify(line);
-					line = line.replace(/\[:3\](.*)\[:3\]/, "<span class=\"diffkey\">Error: message authentication failure.</span>");
+					line = line.replace(/\[:3\](.*)\[:3\]/, "<span class=\"diffkey\">Fehler: Authentifizierung der Nachricht fehlgeschlagen.</span>");
 					pushline(line, pos);
 					$("#" + pos).css("background-image","url(\"img/error.png\")");
 				}
@@ -219,7 +219,7 @@ function process(line, sentid) {
 		}
 		else {
 			if (jQuery.inArray(thisnick, inblocked) < 0) {
-				line = "<span class=\"diffkey\">Error: invalid message received.</span>";
+				line = "<span class=\"diffkey\">Fehler: Ungültige Nachricht empfangen.</span>";
 				pushline(line, pos);
 				$("#" + pos).css("background-image","url(\"img/error.png\")");
 			}
@@ -260,8 +260,8 @@ function updatekeys(sync) {
 					var big = str2bigInt(keys[names[i]], 64);
 					if ((equals(big, p) || greater(big, p) || greater(z, big)) || 
 					(keys[names[i]] !== data[i].replace(/^[a-z]{1,12}:/, ''))) {
-						fingerprints[names[i]] = "<span class=\"red\">DANGER: This user is using suspicious keys. " + 
-						"Communicating with this user is strongly not recommended.</span>";
+						fingerprints[names[i]] = "<span class=\"red\">Gefahr: Dieser Nutzer verwendet verdächtige Schlüssel. " + 
+						"Eine Kommunikation mit diesem Nutzer wird nicht empfohlen.</span>";
 						userinfo(names[i]);
 					}
 					else {
@@ -299,14 +299,14 @@ function updatechat() {
 		success: function(data) {
 			if (data === "NOEXIST") {
 				if (pubkey) {
-					errored("your chat no longer exists.");
+					errored("Dein Chat exitsiert nicht mehr.");
 					$("#chat").html("<div class=\"bsg\">" + notice[Math.floor(Math.random()*notice.length)] + "</div>");
 					clearInterval(interval);
 				}
 			}
 			else if (data === "NOLOGIN") {
 				if (pubkey) {
-					errored("you have been logged out.");
+					errored("Du bist abgemeldet wurden.");
 					clearInterval(interval);
 				}
 			}
@@ -319,7 +319,7 @@ function updatechat() {
 					}
 					if (!cfocus || ((document.getElementById("chat").scrollHeight - $("#chat").scrollTop()) > 800)) {
 						num++;
-						document.title = "[" + num + "] Cryptocat";
+						document.title = "[" + num + "] Cryptochat";
 					}
 				}
 				else if (data) {
@@ -332,7 +332,7 @@ function updatechat() {
 					$("#" + data).attr("id", "x");
 				}
 			}
-			if ($("#users").html() === '<span class="users">x</span>&nbsp; connection issues. stand by...') {
+			if ($("#users").html() === '<span class="users">x</span>&nbsp; Verbindungsschwierigkeiten. Bitte warten...') {
 				updatekeys(true);
 				$("#users").css("background-color", "#97CEEC");
 			}
@@ -440,10 +440,10 @@ $("#nickform").submit( function() {
 						Crypto.Fortuna.AddRandomEvent(e + (up - down));
 					}
 					else {
-						$('#keytext').html("<br />Generating keys");
+						$('#keytext').html("<br />Generiere Schlüssel");
 						pubkey = dhgen(gen(24, 0, 1), "gen");
 						$('#keytext').html($('#keytext').html() + ' &#160; &#160; ' + 
-						'<span class=\"blue\">OK</span><br />Communicating');
+						'<span class=\"blue\">OK</span><br />Kommunikation');
 						setTimeout("nickset()", 250);
 					}
 				});
@@ -469,7 +469,7 @@ function nickset() {
 			if ((data !== "error") && (data !== "inuse") && (data !== "full")) {
 				nick = $("#nick").html();
 				$("#input").focus();
-				document.title = "[" + num + "] Cryptocat";
+				document.title = "[" + num + "] Cryptochat";
 				interval = setInterval("updatechat()", update);
 				updatekeys(false);
 				$('#keytext').html($('#keytext').html() + " &#160; &#160; &#160; <span class=\"blue\">OK</span>");
@@ -485,13 +485,13 @@ function nickset() {
 				$('#keygen').fadeOut('fast', function() {
 					$("#nickentry").fadeIn('fast');
 					if (data === "inuse") {
-						$("#nickinput").val("nickname in use");
+						$("#nickinput").val("Dein Name wird schon genutzt");
 					}
 					else if (data === "full") {
-						$("#nickinput").val("chat is full");
+						$("#nickinput").val("Der Chat ist voll");
 					}
 					else if (data === "error") {
-						$("#nickinput").val("letters only");
+						$("#nickinput").val("Bitte nur Buchstaben");
 					}
 					$("#front").fadeIn();
 					$("#nickinput").focus();
@@ -508,9 +508,9 @@ $("#file").click(function(){
 	if (window.File && window.FileReader) {
 		$("#fadebox").html($("#fadebox").html() + 'Enter recipient: ' +
 		'<input type="text" id="recipient" />' +
-		'<br />Zip files and images accepted. Maximum size: <span class="blue">' + filesize + 
+		'<br />Nur Zip-Dateien und Bilder. Maximale Größe: <span class="blue">' + filesize + 
 		'kb</span><br /><br /><span id="filewrap">' + 
-		'<input type="button" id="filebutton" value="Select file" />' + 
+		'<input type="button" id="filebutton" value="Datei auswählen" />' + 
 		'<input type="file" id="fileselect" name="file[]" /></span><br /><br />');
 		$("#recipient").keyup(function(){
 			if (($("#recipient").val() === nick) || (jQuery.inArray($("#recipient").val(), names) < 0)) {
@@ -537,7 +537,7 @@ $("#file").click(function(){
 			})(file[0]);
 			if (file[0].type.match(mime)) {
 				if (file[0].size > (filesize * 1024)) {
-					$("#filewrap").html('<span class="red">Maximum file size is ' + filesize + 'kb.</span>');
+					$("#filewrap").html('<span class="red">Maximale Dateigröße ist ' + filesize + 'kb.</span>');
 				}
 				else {
 					reader.readAsDataURL(file[0]);
@@ -545,15 +545,15 @@ $("#file").click(function(){
 				}
 			}
 			else {
-				$("#filewrap").html('<span class="red">Only zip and image files are supported.</span>');
+				$("#filewrap").html('<span class="red">Nur Zip-Dateien und Bilder werden akzeptiert.</span>');
 			}
 		}
 		document.getElementById('fileselect').addEventListener('change', handleFileSelect, false);
 	}
 	else {
 		$("#fadebox").html($("#fadebox").html() + 
-		'Sorry, your browser does not support this feature. Consider switching to ' + 
-		'<a href="http://google.com/chrome" target="_blank">Google Chrome</a>, it\'s great!');
+		'Entschuldige, aber dein Browser unterstützt diese Funktio nicht. Vielleicht möchtest du ja mal ' + 
+		'<a href="http://google.com/chrome" target="_blank">Google Chrome</a> ausprobieren?');
 	}
 	$("#close").click(function(){
 		$('#fadebox').fadeOut('fast', function() {
@@ -572,13 +572,13 @@ function display(dataurl, time, image) {
 	if (image) {
 		$("#fadebox").html($("#fadebox").html() + '<br /><center><a href="' + dataurl +
 		'" target="_blank"><img class="encrypted" src="' + dataurl + '" alt="" /></a><br />' +
-		'<span style="margin-left:-10px">(<span class="blue">' + time + '</span>) click to enlarge</span></center>');
+		'<span style="margin-left:-10px">(<span class="blue">' + time + '</span>) Klick zum Vergrößern</span></center>');
 	}
 	else {
 		$("#fadebox").html($("#fadebox").html() + '<br /><br /><span class="blue">Note:</span> ' +
-		'Some browsers may save the encrypted data with an incorrect file extension. ' +
-		'Simply rename your file with a .zip extension to remedy this.<br /><br />' + 
-		'<a class="download" href="' + dataurl + '" target="_blank">Download encrypted .zip file</a>');
+		'Manche Browser speichern die Datei mit einer falschen Dateiendung.' +
+		'Benenne die Dateiendung in .zip um um dieses Problem zu umgehen.<br /><br />' + 
+		'<a class="download" href="' + dataurl + '" target="_blank">Verschlüsselte Zip-Datei herunterladen</a>');
 	}
 	$("#close").click(function(){
 		$('#fadebox').fadeOut('fast', function() {
@@ -619,17 +619,17 @@ function userinfo(n) {
 	'<br /><h3>' + n + '</h3>');
 	if (n === nick) {
 		$("#fadebox").html($("#fadebox").html() +
-		'Users can send you a private message by typing:<br />' +
-		'<span class="blue">@' + n + '</span> their message<br /><br />' +
-		'<br />Verify your identity using your fingerprint:');
+		'Nutzer können dir mit folgendem Format private Nachrichten schicken:<br />' +
+		'<span class="blue">@' + n + '</span> ihre Nachricht<br /><br />' +
+		'<br />Prüfe deine Identität über deinen Fingerprint:');
 	}
 	else {
 		$("#fadebox").html($("#fadebox").html() +
-		'Send <span class="blue">' + n + '</span> a private message:<br />' +
-		'<span class="blue">@' + n + '</span> your message<br /><br />' +
-		'View messages from <span class="blue">' + n + '</span>: &#160;<span class="block" id="incoming">yes</span><br />' +
-		'Send my messages to <span class="blue">' + n + '</span>: <span class="block" id="outgoing">yes</span><br />' +
-		'<br />Verify <span class="blue">' + n + '</span>\'s identity using their fingerprint:');
+		'Sende <span class="blue">' + n + '</span> eine private Nachricht:<br />' +
+		'<span class="blue">@' + n + '</span> deine Nachricht<br /><br />' +
+		'Sieh Nachrichten von <span class="blue">' + n + '</span>: &#160;<span class="block" id="incoming">ja</span><br />' +
+		'Sende meine Nachrichten zu <span class="blue">' + n + '</span>: <span class="block" id="outgoing">ja</span><br />' +
+		'<br />Prüfe <span class="blue">' + n + '</span>s Identität über seinen Fingerprint:');
 	}
 	$("#fadebox").html($("#fadebox").html() + '<br />' + fingerprints[n]);
 	if (jQuery.inArray(n, inblocked) >= 0) {
@@ -745,7 +745,7 @@ function errored(e) {
 }
 
 $(document).ajaxError(function(){
-	errored("connection issues. stand by...");
+	errored("Verbindungsschwierigkeiten. Bitte warten...");
 });
 
 $('#front').fadeIn(0, function() {
