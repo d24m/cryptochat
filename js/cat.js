@@ -504,9 +504,9 @@ function nickset() {
 $("#file").click(function(){
 	var mime = new RegExp('(image.*)|(application/((x-compressed)|(x-zip-compressed)|(zip)))|(multipart/x-zip)');
 	$("#fadebox").html('<input type="button" id="close" value="x" />' +
-	'<br /><h3>send encrypted file</h3>');
+	'<br /><h3>Verschüsselte Datei senden</h3>');
 	if (window.File && window.FileReader) {
-		$("#fadebox").html($("#fadebox").html() + 'Enter recipient: ' +
+		$("#fadebox").html($("#fadebox").html() + 'Empfänger: ' +
 		'<input type="text" id="recipient" />' +
 		'<br />Nur Zip-Dateien und Bilder. Maximale Größe: <span class="blue">' + filesize + 
 		'kb</span><br /><br /><span id="filewrap">' + 
@@ -593,26 +593,26 @@ function display(dataurl, time, image) {
 $("#sound").click(function(){
 	if (sound) {
 		$("#sound").attr("src", "img/nosound.png");
-		$("#sound").attr("title", "message sounds off");
+		$("#sound").attr("title", "Ton aus");
 		sound = 0;
 		$("#input").focus();
 	}
 	else {
 		$("#sound").attr("src", "img/sound.png");
-		$("#sound").attr("title", "message sounds on");
+		$("#sound").attr("title", "Ton an");
 		sound = 1;
 		$("#input").focus();
 	}
 });
 
-$("#invite").click(function(){
+/*$("#invite").click(function(){
 	var url = "https://www.facebook.com/dialog/send?app_id=348025968541285&name=Cryptocat%20Chat%20Invitation&description=" + 
 	"Chat%20with%20your%20friends%20in%20privacy%20with%20secure%20encryption%20using%20Cryptocat.&redirect_uri=" + 
 	"https://crypto.cat/?close&link=" + install + "?c=" + name + "&picture=" + install + "img/ios.png&display=popup";
 	var pop = window.open(url, 'name', 'height=330,width=550,location=0,menubar=0,resizable=0,scrollbars=0' + 
 	',status=0,titlebar=0,toolbar=0,top='+($(window).height()/3.5)+',left='+($(window).width()/2.7));
 	pop.focus();
-});
+});*/
 
 function userinfo(n) {
 	$("#fadebox").html('<input type="button" id="close" value="x" />' +
@@ -634,18 +634,18 @@ function userinfo(n) {
 	$("#fadebox").html($("#fadebox").html() + '<br />' + fingerprints[n]);
 	if (jQuery.inArray(n, inblocked) >= 0) {
 		$("#incoming").css("background-color", "#F00");
-		$("#incoming").html("no");
+		$("#incoming").html("nein");
 	}
 	$("#incoming").click(function(){
-		if ($("#incoming").html() === "no") {
+		if ($("#incoming").html() === "nein") {
 			inblocked.splice(jQuery.inArray(n, inblocked));
 			$("#incoming").css("background-color", "#97CEEC");
-			$("#incoming").html("yes");
+			$("#incoming").html("ja");
 		}
 		else {
 			inblocked.push(n);
 			$("#incoming").css("background-color", "#F00");
-			$("#incoming").html("no");
+			$("#incoming").html("nein");
 		}
 	});
 	if (jQuery.inArray(n, outblocked) >= 0) {
@@ -653,15 +653,15 @@ function userinfo(n) {
 		$("#outgoing").html("no");
 	}
 	$("#outgoing").click(function(){
-		if ($("#outgoing").html() === "no") {
+		if ($("#outgoing").html() === "nein") {
 			outblocked.splice(jQuery.inArray(n, outblocked));
 			$("#outgoing").css("background-color", "#97CEEC");
-			$("#outgoing").html("yes");
+			$("#outgoing").html("ja");
 		}
 		else {
 			outblocked.push(n);
 			$("#outgoing").css("background-color", "#F00");
-			$("#outgoing").html("no");
+			$("#outgoing").html("nein");
 		}
 	});
 	$("#close").click(function(){
@@ -684,7 +684,7 @@ $("#maximize").click(function(){
 		$("#inchat").animate({height: "343px", "margin-bottom": "10px"}, 500 );
 		$("#chat").animate({height: "340px"}, 500, function() { scrolldown(); });
 		$("#maximize").attr("src", "img/maximize.png");
-		$("#maximize").attr("title", "expand");
+		$("#maximize").attr("title", "vergrößern");
 		$("#input").focus();
 	}
 	else {
@@ -696,7 +696,7 @@ $("#maximize").click(function(){
 		$("#inchat").animate({height: "93%", "margin-bottom": "-30px"}, 500 );
 		$("#chat").animate({height: "91%"}, 500, function() { scrolldown(); });
 		$("#maximize").attr("src", "img/minimize.png");
-		$("#maximize").attr("title", "contract");
+		$("#maximize").attr("title", "verkleinern");
 		$("#input").focus();
 	}
 });

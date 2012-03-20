@@ -390,10 +390,10 @@ else {
 				<div id="fadebox" class="invisible"></div>
 			</div>
 			<a href="'.$install.'" onclick="logout();"><img src="img/cryptochat.png" class="chat" alt="cryptochat" /></a>
-			<img src="img/maximize.png" alt="maximize" id="maximize" title="expand" />
-			<img src="img/nosound.png" alt="sound" id="sound" title="message sounds off" />
-			<img src="img/invite.png" alt="invite" id="invite" title="invite friend" />
-			<img src="img/filer.png" alt="file" id="file" title="send encrypted file" />
+			<img src="img/maximize.png" alt="maximize" id="maximize" title="vergrößern" />
+			<img src="img/nosound.png" alt="sound" id="sound" title="Ton aus" />
+			<!-- <img src="img/invite.png" alt="invite" id="invite" title="invite friend" /> -->
+			<img src="img/filer.png" alt="file" id="file" title="Datei senden" />
 			<div id="inchat"><div id="chat"></div></div>
 			<div id="info">du chattest als <span id="nick">'.$nick.'</span> auf 
 			<strong class="blue">'.$install.'?c=</strong><strong id="name">'.$name.'</strong>
