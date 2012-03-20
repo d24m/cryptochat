@@ -233,7 +233,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0;" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="description" content="Cryptocat lets you instantly set up secure conversations. It's an open source encrypted, private alternative to other services such as Facebook chat." />
+	<meta name="description" content="Mit Cryptochat kannst du sofort und sicher chatten. Es basiert auf der Open Source Software Cryptocat und ist eine verschlüsselte und sichere Alternative zu anderen Chatdiensten wie Google Talk oder Facebook." />
 	<meta name="keywords" content="verschlüsselter chat, privater chat, sicherer chat, cryptochat" />
 	<title>Cryptochat</title>
 	<?php
